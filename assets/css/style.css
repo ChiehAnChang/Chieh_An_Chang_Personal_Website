@@ -219,28 +219,34 @@ main { margin: 15px 12px; margin-bottom: 75px; min-width: 259px; }
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
-  overflow: hidden;
+  /* 取消原本用 max-height 收合整張卡片，改由 .sidebar-info_more 動畫 */
+  max-height: none;
+  overflow: visible;
   transition: var(--transition-2);
 }
-.sidebar.active { max-height: 405px; }
 
+/* Sidebar 頭部區 */
 .sidebar-info {
   position: relative;
   display: flex; justify-content: flex-start; align-items: center; gap: 15px;
 }
 
-.avatar-box { background: var(--bg-gradient-onyx); border-radius: 20px; }
+/* 頭像圓角 */
+.avatar-box { background: var(--bg-gradient-onyx); border-radius: 40px; }
 
+/* 名稱置中（配合 info-content 全域置中） */
+.info-content { text-align: center; }
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.info-content .title {
+/* 職稱標籤 */
+.title-tag {
   color: var(--white-1);
   background: var(--onyx);
   font-size: var(--fs-8);
@@ -249,7 +255,16 @@ main { margin: 15px 12px; margin-bottom: 75px; min-width: 259px; }
   padding: 3px 12px;
   border-radius: 8px;
 }
+/* 職稱容器：置中排列 */
+.info-content .titles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  justify-content: center;
+}
 
+/* 展開按鈕 */
 .info_more-btn {
   position: absolute; top: -15px; right: -15px;
   border-radius: 0 15px; font-size: 13px; color: var(--orange-yellow-crayola);
@@ -257,33 +272,43 @@ main { margin: 15px 12px; margin-bottom: 75px; min-width: 259px; }
   padding: 10px; box-shadow: var(--shadow-2);
   transition: var(--transition-1); z-index: 1;
 }
-
 .info_more-btn::before {
   content: "";
   position: absolute; inset: 1px; border-radius: inherit;
   background: var(--bg-gradient-jet);
   transition: var(--transition-1); z-index: -1;
 }
-
 .info_more-btn:hover, .info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
 .info_more-btn:hover::before, .info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
 .info_more-btn span { display: none; }
 
-.sidebar-info_more { opacity: 0; visibility: hidden; transition: var(--transition-2); }
-.sidebar.active .sidebar-info_more { opacity: 1; visibility: visible; }
+/* ======== 展開/收合：對 .sidebar-info_more 做動畫（小螢幕用） ======== */
+.sidebar-info_more {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.7s ease, opacity 0.7s ease;
+}
+.sidebar.active .sidebar-info_more {
+  max-height: 1000px; /* 足夠大的值容納所有內容 */
+  opacity: 1;
+  visibility: visible;
+}
 
+/* 連絡資訊 */
+.sidebar-info_more { /* 這裡保留，讓上面動畫控制可見性 */ }
 .contacts-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
 .contact-item { min-width: 100%; display: flex; align-items: center; gap: 16px; }
 .contact-info { max-width: calc(100% - 46px); width: calc(100% - 46px); }
-
 .contact-title { color: var(--light-gray-70); font-size: var(--fs-8); text-transform: uppercase; margin-bottom: 2px; }
-
 .contact-info :is(.contact-link, time, address) { color: var(--white-2); font-size: var(--fs-7); }
 .contact-info address { font-style: normal; }
 
+/* 社群：置中、移除左側縮排 */
 .social-list {
-  display: flex; justify-content: flex-start; align-items: center;
-  gap: 15px; padding-bottom: 4px; padding-left: 7px;
+  display: flex; justify-content: flex-end; align-items: center;
+  gap: 15px; padding-bottom: 4px; padding-left: 0;
 }
 .social-item .social-link { color: var(--light-gray-70); font-size: 18px; }
 .social-item .social-link:hover { color: var(--light-gray); }
@@ -589,12 +614,15 @@ textarea.form-input::-webkit-resizer { display: none; }
   #RESPONSIVE
 \*-----------------------------------*/
 
+.avatar-box img { border-radius: 20px; }
+
 /** >=450px **/
 @media (min-width: 450px) {
   .clients-item { min-width: calc(33.33% - 10px); }
 
   /* PORTFOLIO, BLOG */
   .project-img, .blog-banner-box { height: auto; }
+  
 }
 
 /** >=580px **/
@@ -612,11 +640,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   main { margin-top: 60px; margin-bottom: 100px; }
 
-  .sidebar { max-height: 180px; margin-bottom: 30px; }
-  .sidebar.active { max-height: 584px; }
+  /* 取消舊的 sidebar max-height 限制（很關鍵） */
+  .sidebar { max-height: none; }
   .sidebar-info { gap: 25px; }
   .avatar-box { border-radius: 30px; }
-  .avatar-box img { width: 120px; }
+  .avatar-box img { border-radius: 20px ;width: 120px; }
   .info-content .name { margin-bottom: 15px; }
   .info-content .title { padding: 5px 18px; }
   .info_more-btn { top: -30px; right: -30px; padding: 10px 15px; }
@@ -771,9 +799,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   body::-webkit-scrollbar-button { height: 60px; }
 
   /* layout */
-  .sidebar { width: 320px; }             /* ↑ widened sidebar */
-  article { width: auto; }               /* keep articles flexible */
-
+  .sidebar { width: 320px; }
+  article { width: auto; }
   article { min-height: 100%; }
 
   main {
@@ -785,25 +812,26 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* SIDEBAR specifics */
   .sidebar {
-    align-self: flex-start;  /* ← 阻止被父層 align-items:stretch 拉高 */
-    height: auto;            /* 依內容高度 */
-    max-height: none;        /* 不設上限，避免裁切 */
-    overflow: visible;       /* 不裁切內容 */
-    padding-bottom: 2rem;    /* 與底部最後一個元素保持 ~2rem 距離 */
+    align-self: flex-start;
+    height: auto;
+    max-height: none;           /* 仍不限制卡片高度，動畫交給 .sidebar-info_more */
+    overflow: visible;
+    padding-bottom: 2rem;
   }
   .sidebar-info { flex-direction: column; }
-  .avatar-box img { width: 150px; }
+  .avatar-box img { border-radius: 20px; width: 150px; }
   .info-content .name { white-space: nowrap; text-align: center; }
   .info-content .title { margin: auto; }
-  .info_more-btn { display: none; }
-  .sidebar-info_more { opacity: 1; visibility: visible; }
+  .info_more-btn { display: none; }   /* 大螢幕隱藏按鈕，動畫由 JS 自動展開觸發 */
+  /* 不強制 .sidebar-info_more 永遠顯示，保留動畫可能，由 JS 控制 active */
+
   .contacts-list { grid-template-columns: 1fr; }
 
-  /* Allow email to wrap instead of ellipsis */
+  /* 允許 email 換行 */
   .contact-info :is(.contact-link) {
-    white-space: normal;           /* was nowrap */
-    overflow: visible;             /* was hidden */
-    text-overflow: unset;          /* was ellipsis */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
     word-break: break-all;
     overflow-wrap: anywhere;
   }
@@ -814,11 +842,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .separator:last-of-type { margin: 15px 0; opacity: 0; }
-  .social-list { justify-content: center; }
+  .social-list { justify-content: flex-end; }
 
   /* RESUME */
   .timeline-text { max-width: 700px; }
 }
+
 /* === Project Modal === */
 .project-modal-container {
   position: fixed;
@@ -840,18 +869,23 @@ textarea.form-input::-webkit-resizer { display: none; }
   visibility: visible;
 }
 
+/* Overlay must NOT catch clicks when hidden */
 [data-project-overlay] {
   position: fixed;
   inset: 0;
   background: hsl(0, 0%, 0%);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;      /* 👈 add this */
   transition: var(--transition-1);
   z-index: 39;
 }
+
+/* Only catch clicks when active */
 [data-project-overlay].active {
   opacity: 0.8;
   visibility: visible;
+  pointer-events: auto;      /* 👈 add this */
 }
 
 .project-modal {
@@ -928,10 +962,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 .project-meta .meta-label {
   color: var(--vegas-gold);
   font-weight: var(--fw-500);
-}   /* gold headings */
+}
 .project-meta .meta-value {
   color: var(--white-2);
-}                                  /* white text */
+}
 
 .project-desc {
   color: var(--light-gray);
@@ -951,6 +985,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   background: var(--bg-gradient-yellow-1);
 }
 
+/* Modal responsive */
 @media (min-width: 768px) {
   .project-modal {
     grid-template-columns: 1.1fr 1fr;
@@ -964,24 +999,18 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-.project-modal-close {
-  transition: var(--transition-1);
-  cursor: pointer;
-}
+/* Contact button hover = gold bg + white text/icon */
+.form-btn,
+.form-btn span,
+.form-btn ion-icon { transition: var(--transition-1); }
 
-.project-modal-close:hover,
-.project-modal-close:focus-visible {
-  background: var(--bg-gradient-yellow-1);   /* same as drive-link hover */
-  border-color: var(--orange-yellow-crayola);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-4);
+.form-btn:not(:disabled):hover {
+  background: var(--bg-gradient-yellow-1);
+  color: var(--white-2);
 }
-
-.project-modal-close:hover ion-icon,
-.project-modal-close:focus-visible ion-icon {
-  color: var(--white-2); /* keep cross white on hover */
+.form-btn:not(:disabled):hover::before {
+  background: var(--bg-gradient-yellow-2);
 }
-
-.project-modal-close ion-icon {
-  pointer-events: none; /* click passes through icon to button */
+.form-btn:not(:disabled):hover ion-icon {
+  color: var(--white-2);
 }
