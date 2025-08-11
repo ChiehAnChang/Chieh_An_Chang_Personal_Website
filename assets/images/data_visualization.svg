@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img">
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE8A3"/>
+      <stop offset="45%" stop-color="#FFD06A"/>
+      <stop offset="100%" stop-color="#F5B544"/>
+    </linearGradient>
+  </defs>
+<g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- monitor -->
+  <rect x="8" y="12" width="48" height="32" rx="4"/>
+  <line x1="24" y1="48" x2="40" y2="48"/>
+  <line x1="32" y1="44" x2="32" y2="48"/>
+  <!-- line chart -->
+  <polyline points="14,36 22,30 30,34 40,22 50,28"/>
+  <circle cx="14" cy="36" r="2"/><circle cx="22" cy="30" r="2"/>
+  <circle cx="30" cy="34" r="2"/><circle cx="40" cy="22" r="2"/>
+  <circle cx="50" cy="28" r="2"/>
+</g>
+</svg>

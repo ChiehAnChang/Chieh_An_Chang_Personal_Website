@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - vCard</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <aside class="sidebar">
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/avatar.png" alt="Chieh-An Chang" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Chieh-An Chang">Chieh-An Chang</h1>
+          <p class="title">Data Scientist</p>
+        </div>
+
+        <button class="info_more-btn">
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:chiehan.chang.job@gmail.com" class="contact-link">chiehan.chang.job@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>North York, ON M2J 0G4</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/chiehanchang/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/ChiehAnChang" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </aside>
+<div class="main-content">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a class="navbar-link" href="About.html">About</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="Resume.html">Resume</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link active" href="Portfolio.html">Portfolio</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="Blog.html">Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="Contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <article class="portfolio active">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active">All</button></li>
+            <li class="filter-item"><button>Data Science</button></li>
+            <li class="filter-item"><button>Quantative Analysis</button></li>
+            <li class="filter-item"><button>Data Analysis</button></li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select">
+              <div class="select-value">Select category</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button>All</button></li>
+              <li class="select-item"><button>Data Science</button></li>
+              <li class="select-item"><button>Quantative Analysis</button></li>
+              <li class="select-item"><button>Data Analysis</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <li
+              class="project-item active"
+              data-category="Data Science"
+              data-title="Predicting Falcon 9 Reusability"
+              data-instructor=""
+              data-author="Chieh-An Chang"
+              data-coauthors=""
+              data-skill=""
+              data-description="A classification pipeline predicting Falcon 9 first-stage landing outcomes using feature engineering, EDA, and model comparison."
+              data-drive="https://colab.research.google.com/drive/1djs7nsKC1p1R1uI3P08jqnHBE3KIVzO7?usp=sharing"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                  <img src="./assets/images/SpaceX_F9.png" alt="Predicting Falcon 9 Reusability" loading="lazy">
+                </figure>
+                <h3 class="project-title">Predicting Falcon 9 Reusability</h3>
+                <p class="project-category">Data Science</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-category="Data Science"
+              data-title="Modeling Stock Market Trends through GBM"
+              data-instructor="Professor Omidali (Omid) Aghababaei Jazi"
+              data-author="Chieh-An Chang"
+              data-coauthors="Omerzahid Ali, Hua-Hsun Hsieh"
+              data-skill=""
+              data-description="This research explores using Geometric Brownian Motion (GBM) and Hamiltonian Monte Carlo (HMC) to model and predict stock prices, specifically for Johnson & Johnson (JNJ) stock. It covers the theoretical foundations of GBM, its application in stock price estimation, and the use of HMC for parameter estimation (drift and volatility). The paper demonstrates how GBM can effectively capture stock price movements and generate predictions, noting that the confidence interval for predictions widens over longer forecast horizons due to the inherent limitations of assuming constant drift and volatility."
+              data-drive="https://drive.google.com/file/d/18CIzshGvVpz6GnEJ17s4q_B-Tp9achWu/view?usp=sharing"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/JNJ.png" alt="Modeling Stock Market Trends through GBM" loading="lazy">
+                </figure>
+                <h3 class="project-title">Modeling Stock Market Trends through GBM</h3>
+                <p class="project-category">Data Science</p>
+              </a>
+            </li>     
+            <li
+              class="project-item active"
+              data-category="Data Science"
+              data-title="Student Preferences for Learning Methods"
+              data-instructor="Professor Luai Al Labadi"
+              data-author="Chieh-An Chang (Team-Lead)"
+              data-coauthors="Andy Tran, Bangcheng Wang, Kean Chen, Yuta Kondo"
+              data-skill=""
+              data-description="This research paper investigates student preferences for learning methods, specifically comparing traditional resources (textbooks, lecture slides) with online technologies (generative AI, online platforms like YouTube). The study, using stratified random sampling of 60 students, found that while demographic factors like gender and native language did not significantly influence academic achievement or study time, students overwhelmingly preferred generative AI and online platforms over traditional methods."
+              data-drive="https://drive.google.com/file/d/1UIDnUcQiJSQXSwLUEWKriDqsAvxV7QyT/view?usp=sharing"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/student_preference.png" alt="Student Preferences for Learning Methods" loading="lazy">
+                </figure>
+                <h3 class="project-title">Student Preferences for Learning Methods</h3>
+                <p class="project-category">Data Science</p>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </section>
+      </article>
+
+    </div>
+
+  </main>
+  <!-- Project Modal -->
+  <div class="overlay" data-project-overlay></div>
+
+  <section class="project-modal-container" data-project-modal>
+    <div class="project-modal">
+      <button class="project-modal-close" data-project-close aria-label="Close project modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="project-modal-media">
+        <img data-project-img src="" alt="">
+      </div>
+
+      <div class="project-modal-content">
+        <h3 class="project-modal-title" data-project-title></h3>
+
+        <ul class="project-meta">
+          <li><span class="meta-label">Instructor:</span> <span class="meta-value" data-project-instructor></span></li>
+          <li><span class="meta-label">Author:</span> <span class="meta-value" data-project-author></span></li>
+          <li><span class="meta-label">Co-Author:</span> <span class="meta-value" data-project-coauthors></span></li>
+          <li><span class="meta-label">Skill:</span> <span class="meta-value" data-project-skill></span></li>
+          <li><span class="meta-label">Description:</span> <span class="meta-value" data-project-description></span></li>
+        </ul>
+
+        <a class="project-drive-link" data-project-drive target="_blank" rel="noopener">Open file on Google Drive/Colab</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="./assets/js/script.js"></script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

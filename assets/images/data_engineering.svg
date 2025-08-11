@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img">
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE8A3"/>
+      <stop offset="45%" stop-color="#FFD06A"/>
+      <stop offset="100%" stop-color="#F5B544"/>
+    </linearGradient>
+  </defs>
+<g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- database stack -->
+  <ellipse cx="22" cy="18" rx="12" ry="6"/>
+  <path d="M10 18 v20 c0 3 5 6 12 6 s12-3 12-6 v-20"/>
+  <path d="M10 26 c0 3 5 6 12 6 s12-3 12-6"/>
+  <path d="M10 34 c0 3 5 6 12 6 s12-3 12-6"/>
+  <!-- pipeline with arrow -->
+  <path d="M36 22 h10 a6 6 0 0 1 6 6 v0"/>
+  <path d="M52 28 h-8 v8 h8"/>
+  <polyline points="52,36 58,32 52,28"/>
+</g>
+</svg>

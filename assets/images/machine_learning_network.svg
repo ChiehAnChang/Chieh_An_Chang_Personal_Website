@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img">
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE8A3"/>
+      <stop offset="45%" stop-color="#FFD06A"/>
+      <stop offset="100%" stop-color="#F5B544"/>
+    </linearGradient>
+  </defs>
+<g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- Input layer -->
+  <circle cx="16" cy="18" r="3"/>
+  <circle cx="16" cy="32" r="3"/>
+  <circle cx="16" cy="46" r="3"/>
+
+  <!-- Hidden layer -->
+  <circle cx="32" cy="14" r="3"/>
+  <circle cx="32" cy="32" r="3"/>
+  <circle cx="32" cy="50" r="3"/>
+
+  <!-- Output layer -->
+  <circle cx="48" cy="24" r="3"/>
+  <circle cx="48" cy="40" r="3"/>
+
+  <!-- Connections from input to hidden -->
+  <line x1="19" y1="18" x2="29" y2="14"/>
+  <line x1="19" y1="18" x2="29" y2="32"/>
+  <line x1="19" y1="18" x2="29" y2="50"/>
+
+  <line x1="19" y1="32" x2="29" y2="14"/>
+  <line x1="19" y1="32" x2="29" y2="32"/>
+  <line x1="19" y1="32" x2="29" y2="50"/>
+
+  <line x1="19" y1="46" x2="29" y2="14"/>
+  <line x1="19" y1="46" x2="29" y2="32"/>
+  <line x1="19" y1="46" x2="29" y2="50"/>
+
+  <!-- Connections from hidden to output -->
+  <line x1="35" y1="14" x2="45" y2="24"/>
+  <line x1="35" y1="14" x2="45" y2="40"/>
+
+  <line x1="35" y1="32" x2="45" y2="24"/>
+  <line x1="35" y1="32" x2="45" y2="40"/>
+
+  <line x1="35" y1="50" x2="45" y2="24"/>
+  <line x1="35" y1="50" x2="45" y2="40"/>
+</g>
+</svg>

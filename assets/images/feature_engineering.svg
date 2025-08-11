@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img">
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE8A3"/>
+      <stop offset="45%" stop-color="#FFD06A"/>
+      <stop offset="100%" stop-color="#F5B544"/>
+    </linearGradient>
+  </defs>
+<g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- gear -->
+  <circle cx="22" cy="32" r="6" />
+  <g>
+    <line x1="22" y1="18" x2="22" y2="23"/>
+    <line x1="22" y1="41" x2="22" y2="46"/>
+    <line x1="8" y1="32" x2="13" y2="32"/>
+    <line x1="31" y1="23" x2="35" y2="19"/>
+    <line x1="31" y1="41" x2="35" y2="45"/>
+    <line x1="13" y1="23" x2="9" y2="19"/>
+    <line x1="13" y1="41" x2="9" y2="45"/>
+    <line x1="36" y1="32" x2="31" y2="32"/>
+  </g>
+  <!-- branching links to squares (features) -->
+  <path d="M31 32 Q40 28 44 22"/>
+  <path d="M31 32 Q44 32 49 32"/>
+  <path d="M31 32 Q40 36 44 42"/>
+  <rect x="46" y="18" width="8" height="8" rx="2"/>
+  <rect x="51" y="28" width="8" height="8" rx="2"/>
+  <rect x="46" y="38" width="8" height="8" rx="2"/>
+</g>
+</svg>
